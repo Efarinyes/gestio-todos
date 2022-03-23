@@ -74,7 +74,7 @@ function App() {
   useEffect(() => {
     getTodos().then(setTodos);
     const intervalID = setInterval(() => {
-      getTodos().them(setTodos);
+      getTodos().then(setTodos);
     }, 60000);
     return () => clearInterval(intervalID);
   }, []);
