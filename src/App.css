@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  
 }
 
 .App-logo {
@@ -21,7 +22,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: bisque;
 }
 
 .App-link {
@@ -41,5 +42,30 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: cadetblue;
+  background-color:#282c34;
+}
+.llista {
+  list-style: none;
+}
+.llista li {
+  padding: 1rem;
+  
+}
+li {
+  color: bisque;
+  border-bottom: 1px solid gray;
+}
+.label-styles {
+  color: bisque;
+  padding: .8rem;
+}
+
+.form-style {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+.text-form {
+  font-size: 1.5rem;
+  padding-right: .5rem;
+  color: whitesmoke;
 }

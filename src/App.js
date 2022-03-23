@@ -1,34 +1,54 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
 
-function AfegirTodo() {
+const ENPOINT = "https://tc-todo-2022.herokuapp.com/todos";
+
+function AfegirTodo({ onTodoAdded }) {
   const titleRef = useRef();
   const detailsRef = useRef();
 
   return (
     <form
+      className = 'form-style'
       onSubmit={(e) => {
         e.preventDefault();
         const title = titleRef.current.value;
         const details = detailsRef.current.value;
 
-        title.current.value = "";
-        details.current.value = "";
+
+        fetch(ENPOINT, {
+          method: 'POST',
+          body: JSON.stringify({
+            title: title,
+            details: details
+          }),
+        })
+          .then((reponse) => reponse.json())
+          .then((json) => onTodoAdded(json));
+        titleRef.current.value = '';
+        detailsRef.current.value = '';
       }}
     >
-      <label>Titol TODO</label>
+      <label className = 'label-styles'>Titol TODO</label>
       <input ref={titleRef} />
-      <label> Detalls TODO </label>
+      <label className = 'label-styles'> Detalls TODO </label>
       <input ref={detailsRef} />
       <input type="submit" value="Afegir" />
     </form>
   );
 }
+function TodoItem({ todo }) {
+  return (
+    <li>
+      <span className=' text-form '> Títol: </span>  {todo.title} - <span className=' text-form '> Detalls: </span>   {todo.details}
+    </li>
+  )
+}
 
 function App() {
   const [todos, setTodos] = useState([]);
   useEffect(() => {
-    fetch("https://tc-todo-2022.herokuapp.com/todos")
+    fetch(ENPOINT)
       .then((response) => response.json())
       .then((json) => setTodos(json));
   });
@@ -39,17 +59,15 @@ function App() {
       </header>
       <div className="Container">
         <h4> Todos </h4>
-        <ul>
+        <AfegirTodo onTodoAdded={todo => setTodos([...todos, todo])} />
+        
+        <ul className = 'llista'>
           {todos.map((todo) => (
-            <>
-              <li key={todo.id}>
-                {todo.title} - {todo.details}
-              </li>
-            </>
+              <TodoItem key={todo.id} todo = { todo } />
           ))}
         </ul>
 
-        <AfegirTodo />
+        
       </div>
     </>
   );
