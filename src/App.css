@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  
 }
 
 .App-logo {
@@ -42,30 +41,74 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color:#282c34;
+  background-color: #282c34;
 }
 .llista {
   list-style: none;
 }
 .llista li {
   padding: 1rem;
-  
 }
 li {
   color: bisque;
   border-bottom: 1px solid gray;
+  cursor: pointer;
 }
+li:hover {
+  color: rgb(245, 168, 73);
+  font-size: 1rem;
+}
+li.completed {
+  text-decoration: line-through;
+}
+
 .label-styles {
   color: bisque;
-  padding: .8rem;
+  padding: 0.8rem;
 }
 
 .form-style {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 1rem;
   font-size: 1.2rem;
 }
 .text-form {
   font-size: 1.5rem;
-  padding-right: .5rem;
+  padding-right: 0.5rem;
   color: whitesmoke;
+}
+.titular {
+  color: bisque;
+}
+
+#submit-boto {
+  margin-top: 2rem;
+  width: 100%;
+  height: 2.5rem;
+  background-color: brown;
+  font-size: 1.5rem;
+  color: bisque;
+  border: none;
+  border-radius: 3rem;
+}
+#submit-boto:hover {
+  background-color: rgb(243, 160, 160);
+  color: black;
+}
+.boto-refresh {
+  margin-top: 2rem;
+  width: 20%;
+  height: 2.5rem;
+  background-color: brown;
+  font-size: 1.5rem;
+  color: bisque;
+  border: none;
+  border-radius: 3rem;
+}
+.boto-refresh:hover {
+  background-color: rgb(243, 160, 160);
+  color: black;
 }
