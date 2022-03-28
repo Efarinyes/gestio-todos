@@ -13,9 +13,9 @@ export function Todos() {
   const refreshTodos = () => getTodos().then((allTodos) => dispatch( replaceTodos(allTodos)));
 
   useEffect(() => {
-    getTodos();
+    getTodos()
     const intervalID = setInterval(() => {
-      getTodos();
+      getTodos()
     }, 60000);
     return () => clearInterval(intervalID);
   }, []);
