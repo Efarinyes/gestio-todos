@@ -1,27 +1,27 @@
-import { useEffect, useReducer} from "react";
+import { useEffect, useReducer } from "react";
 import { AfegirTodo } from "./AfegirTodo";
 import { replaceTodos, addTodo, updateTodo } from "./actions";
 import { TodoList } from "./TodoList";
 import { getTodos } from "./todosAPI";
 import { initialState, reduceTodos } from "./reducers";
 
-
 export function Todos() {
-  const [todos, dispatch] = useReducer( reduceTodos, initialState);
+  const [todos, dispatch] = useReducer(reduceTodos, initialState);
 
   // const onTodoRefresh = (todos) => dispatch(replaceTodos(todos));
-  const refreshTodos = () => getTodos().then((allTodos) => dispatch( replaceTodos(allTodos)));
+  const refreshTodos = () =>
+    getTodos().then((allTodos) => dispatch(replaceTodos(allTodos)));
 
   useEffect(() => {
-    getTodos()
+    getTodos().then((allTodos) => dispatch(replaceTodos(allTodos)));
     const intervalID = setInterval(() => {
-      getTodos()
+      getTodos();
     }, 60000);
     return () => clearInterval(intervalID);
   }, []);
 
-  const onTodoAdded = (todo) => dispatch( addTodo(todo));
-  const onTodoUpdated = (updatedTodo) => dispatch( updateTodo(updatedTodo));
+  const onTodoAdded = (todo) => dispatch(addTodo(todo));
+  const onTodoUpdated = (updatedTodo) => dispatch(updateTodo(updatedTodo));
 
   return (
     <>
