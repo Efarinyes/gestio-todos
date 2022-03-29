@@ -1,12 +1,21 @@
-export const REPLACE_TODOS = "REPLACE_TODOS";
+
+
+export const REQUEST_TODOS = "todos/REQUEST_TODOS";
+export function requestTodos() {
+  return { type: REQUEST_TODOS }
+  }
+
+ 
+
+export const REPLACE_TODOS = "todos/REPLACE_TODOS";
 export function replaceTodos(todos) {
   return { type: REPLACE_TODOS, todos };
 }
-export const UPDATE_TODO = "UPDATE_TODO";
+export const UPDATE_TODO = "todos/UPDATE_TODO";
 export function updateTodo(updatedTodo) {
   return { type: UPDATE_TODO, todo: updatedTodo };
 }
-export const ADD_TODO = "ADD_TODO";
+export const ADD_TODO = "todos/ADD_TODO";
 export function addTodo(todo) {
   return { type: ADD_TODO, todo };
 }
