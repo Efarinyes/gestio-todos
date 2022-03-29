@@ -1,16 +1,17 @@
-import { postUptadedTodo } from "./todosAPI";
-
-export function TodoItem({ todo, onUpdated }) {
+export function TodoItem({ todo, onTodoUpdate }) {
   return (
-    <li
-      className={todo.completed ? "completed" : "pending"}
-      onClick={() => {
-        postUptadedTodo(todo).then((json) => onUpdated(json));
-      }}
-    >
-      <span className=" text-form "> Títol: </span> {todo.title} -
-      <span className=" text-form "> Detalls: </span>
-      {todo.details}
-    </li>
+    <>
+      <div className="container-todo">
+        <button className="editar-button"> Editar Todo</button>
+        <li
+          className={todo.completed ? "completed" : "pending"}
+          onClick={() => onTodoUpdate({ ...todo, completed: !todo.completed })}
+        >
+          <span className=" text-form "> Títol: {todo.title} </span>
+          <span className=" text-form ">Detalls: {todo.details}</span>
+        </li>
+        <button className="borrar-todo"> Borrar Todo</button>
+      </div>
+    </>
   );
 }
