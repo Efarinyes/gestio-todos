@@ -1,4 +1,9 @@
-export function TodoItem({ todo, onTodoUpdate }) {
+import { useState, useEffect } from 'react';
+import ReactModal from 'react-modal';
+ReactModal.setAppElement('#main');
+
+export function TodoItem({ todo, onTodoUpdate }) {   
+
   return (
     <>
       <div className="container-todo">
