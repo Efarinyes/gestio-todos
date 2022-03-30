@@ -1,9 +1,9 @@
 const ENDPOINT = "https://tc-todo-2022.herokuapp.com/todos";
 
-export function getTodos() {
+export async function getTodos() {
   return fetch(ENDPOINT).then((response) => response.json());
 }
-export function postNewTodo(todo) {
+export async function postNewTodo(todo) {
   return fetch(ENDPOINT, {
     method: "POST",
     body: JSON.stringify({
@@ -12,9 +12,15 @@ export function postNewTodo(todo) {
     }),
   }).then((reponse) => reponse.json());
 }
-export function postUptadedTodo(todo) {
+export async function postUptadedTodo(todo) {
   return fetch(`${ENDPOINT}/${todo.id}`, {
     method: "POST",
     body: JSON.stringify(todo),
+  }).then((response) => response.json());
+}
+
+export async function postDeleteTodo(todo) {
+  return fetch(`${ENDPOINT}/${todo.id}`, {
+    method: "DELETE",
   }).then((response) => response.json());
 }

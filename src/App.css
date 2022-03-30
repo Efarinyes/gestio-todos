@@ -2,7 +2,6 @@
   text-align: center;
 }
 
-
 .App-header {
   background-color: #282c34;
   min-height: 20vh;
@@ -65,7 +64,7 @@ input {
   height: 2rem;
   background-color: brown;
   font-size: 0.9rem;
-  color: bisque ;
+  color: bisque;
   border: none;
   border-radius: 3rem;
 }
@@ -143,4 +142,29 @@ input {
 .boto-refresh:hover {
   background-color: rgb(243, 160, 160);
   color: black;
+}
+
+/* Estils finestra modal */
+
+.Modal {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 10%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #282c34;
+  color: bisque;
+  width: 35%;
+  height: 35%;
+}
+
+.Modal button {
+  width: 15%;
+  height: 2rem;
+  background-color: brown;
+  font-size: 0.9rem;
+  color: bisque;
+  border: none;
+  border-radius: 3rem;
 }
