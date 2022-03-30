@@ -1,4 +1,4 @@
-import { ADD_TODO, UPDATE_TODO, REPLACE_TODOS } from "./actions";
+import { ADD_TODO, UPDATE_TODO, REPLACE_TODOS, DELETE_TODO } from "./actions";
 
 export const initialState = [];
 export function reduceTodos(state = initialState, action) {
@@ -11,6 +11,9 @@ export function reduceTodos(state = initialState, action) {
       );
     case REPLACE_TODOS:
       return action.todos;
+
+    case DELETE_TODO:
+      return state.filter((todo) => todo.id !== action.todo.id);
     default:
       return state;
   }

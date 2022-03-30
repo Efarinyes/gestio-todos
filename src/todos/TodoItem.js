@@ -16,7 +16,7 @@ export function TodoItem({ todo, onTodoUpdate }) {
           Editar TODO{" "}
         </button>
         <ReactModal isOpen={mostraModalEditar} className="Modal">
-          <h1> SOc una finestra modal</h1>
+          <h1> Soc una finestra modal</h1>
           <button onClick={() => setMostraModalEditar(false)}> Tanca </button>
         </ReactModal>
         <li
@@ -38,7 +38,8 @@ export function TodoItem({ todo, onTodoUpdate }) {
           className="Modal"
           contentLabel="Minimal Modal Example"
         >
-          <h1> Soc un Altre Modal </h1>
+          <h1> Vol borrar aquest TODO ? </h1>
+        
           <button onClick={() => setMostrarModalBorrar(false)}> Tanca </button>
         </ReactModal>
       </div>
