@@ -27,6 +27,6 @@ export function requestAddTodo(todo) {
 }
 
 export const DELETE_TODO = "todos/REQUEST_ADD_TODO";
-export function deleteTodo(todo) {
+export function requestDeleteTodo(todo) {
   return { type: DELETE_TODO, todo };
 }

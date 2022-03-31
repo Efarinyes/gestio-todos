@@ -20,6 +20,7 @@ export function Todos() {
   const refreshTodos = () => dispatch(requestTodos());
   const onAddTodo = (todo) => dispatch(requestAddTodo(todo));
   const onTodoUpdate = (todo) => dispatch(requestUpdateTodo(todo));
+  const deleteTodo = (todo) => dispatch(deleteTodo(todo));
 
   return (
     <>
@@ -35,7 +36,11 @@ export function Todos() {
           Refresca
         </button>
 
-        <TodoList todos={todos} onTodoUpdate={onTodoUpdate} />
+        <TodoList 
+          todos={todos} 
+          onTodoUpdate={onTodoUpdate} 
+          onDeleteTodo={deleteTodo}
+        />
       </div>
     </>
   );

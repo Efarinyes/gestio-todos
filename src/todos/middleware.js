@@ -1,6 +1,6 @@
 import {
   addTodo,
-  deleteTodo,
+  
   DELETE_TODO,
   replaceTodos,
   REQUEST_ADD_TODO,
@@ -12,7 +12,7 @@ import {
   getTodos,
   postNewTodo,
   postUptadedTodo,
-  postDeleteTodo,
+  deleteTodo,
 } from "./todosAPI";
 
 export const todosMiddleware = (store) => (next) => async (action) => {
@@ -33,7 +33,10 @@ export const todosMiddleware = (store) => (next) => async (action) => {
   }
 
   if (action.type === DELETE_TODO) {
-    const todo = await postDeleteTodo(action.todo);
-    store.dispatch(deleteTodo(todo));
+    const todo = await deleteTodo(action.todo);
+    store.dispatch(updateTodo(todo));
+    const todos = await getTodos();
+    store.dispatch(replaceTodos(todos));
+
   }
 };

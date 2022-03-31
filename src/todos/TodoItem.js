@@ -5,7 +5,10 @@ ReactModal.setAppElement("#main");
 export function TodoItem({ todo, onTodoUpdate }) {
   const [mostraModalEditar, setMostraModalEditar] = useState(false);
   const [mostrarModalBorrar, setMostrarModalBorrar] = useState(false);
+  
+  
 
+ 
   return (
     <>
       <div className="container-todo">
@@ -28,7 +31,7 @@ export function TodoItem({ todo, onTodoUpdate }) {
         </li>
         <button
           className="borrar-todo"
-          onClick={() => setMostrarModalBorrar(true)}
+          onClick={() => setMostrarModalBorrar(true)} 
         >
           {" "}
           Borrar TODO{" "}
@@ -38,7 +41,8 @@ export function TodoItem({ todo, onTodoUpdate }) {
           className="Modal"
           contentLabel="Minimal Modal Example"
         >
-          <h1> Vol borrar aquest TODO ? </h1>
+          <h1>Borrar aquest TODO? </h1>
+          
         
           <button onClick={() => setMostrarModalBorrar(false)}> Tanca </button>
         </ReactModal>
