@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ReactModal from "react-modal";
+import { UpdateCurrentTodo } from "./UpdateCurrentTodo";
 ReactModal.setAppElement("#main");
 
 export function TodoItem({ todo, onTodoUpdate, onDeleteTodo }) {
@@ -17,6 +18,12 @@ export function TodoItem({ todo, onTodoUpdate, onDeleteTodo }) {
         </button>
         <ReactModal isOpen={mostraModalEditar} className="Modal">
           <h2> Editar TODO</h2>
+          <UpdateCurrentTodo
+            todo={todo}
+            onTodoUpdate={onTodoUpdate}
+            mostraModalEditar={mostraModalEditar}
+            setMostraModalEditar={setMostraModalEditar}
+          />
 
           <button onClick={() => setMostraModalEditar(false)}> Tanca </button>
         </ReactModal>

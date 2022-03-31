@@ -169,3 +169,11 @@ input {
   border-radius: 3rem;
   margin: 1rem;
 }
+.Modal .modificar {
+  height: 2rem;
+  color: bisque;
+  font-size: 0.8rem;
+  border: none;
+  background-color: brown;
+  border-radius: 3rem;
+}
