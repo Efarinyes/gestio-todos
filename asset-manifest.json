@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/gestio-todos/static/css/main.4edfc8d1.css",
+    "main.js": "/gestio-todos/static/js/main.0825088a.js",
+    "static/js/787.839fbbd0.chunk.js": "/gestio-todos/static/js/787.839fbbd0.chunk.js",
+    "index.html": "/gestio-todos/index.html",
+    "main.4edfc8d1.css.map": "/gestio-todos/static/css/main.4edfc8d1.css.map",
+    "main.0825088a.js.map": "/gestio-todos/static/js/main.0825088a.js.map",
+    "787.839fbbd0.chunk.js.map": "/gestio-todos/static/js/787.839fbbd0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4edfc8d1.css",
+    "static/js/main.0825088a.js"
+  ]
+}
