@@ -1,6 +1,11 @@
 import { useEffect } from "react";
 import { AfegirTodo } from "./AfegirTodo";
-import { requestAddTodo, requestUpdateTodo, requestTodos } from "./actions";
+import {
+  requestAddTodo,
+  requestUpdateTodo,
+  requestTodos,
+  requestDeleteTodo,
+} from "./actions";
 import { TodoList } from "./TodoList";
 import { useDispatch, useSelector } from "react-redux";
 import { selectTodos } from "./selectors";
@@ -20,7 +25,7 @@ export function Todos() {
   const refreshTodos = () => dispatch(requestTodos());
   const onAddTodo = (todo) => dispatch(requestAddTodo(todo));
   const onTodoUpdate = (todo) => dispatch(requestUpdateTodo(todo));
-  const deleteTodo = (todo) => dispatch(deleteTodo(todo));
+  const onDeleteTodo = (todo) => dispatch(requestDeleteTodo(todo));
 
   return (
     <>
@@ -36,10 +41,10 @@ export function Todos() {
           Refresca
         </button>
 
-        <TodoList 
-          todos={todos} 
-          onTodoUpdate={onTodoUpdate} 
-          onDeleteTodo={deleteTodo}
+        <TodoList
+          todos={todos}
+          onTodoUpdate={onTodoUpdate}
+          onDeleteTodo={onDeleteTodo}
         />
       </div>
     </>

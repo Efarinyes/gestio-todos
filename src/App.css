@@ -155,8 +155,8 @@ input {
   align-items: center;
   background-color: #282c34;
   color: bisque;
-  width: 35%;
-  height: 35%;
+  width: 45%;
+  height: 45%;
 }
 
 .Modal button {
@@ -167,4 +167,5 @@ input {
   color: bisque;
   border: none;
   border-radius: 3rem;
+  margin: 1rem;
 }

@@ -19,7 +19,7 @@ export async function postUptadedTodo(todo) {
   }).then((response) => response.json());
 }
 
-export async function deleteTodo(todo) {
+export async function deleteCurrentTodo(todo) {
   return fetch(`${ENDPOINT}/${todo.id}`, {
     method: "DELETE",
   }).then((response) => response.json());
